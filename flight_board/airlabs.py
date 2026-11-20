@@ -121,6 +121,10 @@ def fetch_schedules(api_key: str, timeout: float = 15.0) -> list[dict[str, Any]]
     params = {
         "api_key": api_key,
         "arr_iata": "LAX",
+        # Free AirLabs keys return at most 50 schedule rows.  Filtering out
+        # completed/cancelled flights keeps that page centered on flights that
+        # are still relevant to an arrivals display instead of earlier rows.
+        "status": "scheduled,active",
         "limit": 50,
         "_fields": REQUEST_FIELDS,
     }
