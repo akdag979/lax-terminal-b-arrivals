@@ -1,0 +1,6 @@
+streamlit>=1.37,<1.51
+requests>=2.32,<3
+urllib3>=1.26,<2
+airportsdata>=20241001
+pytest>=8.3,<9
+
